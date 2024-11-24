@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    #etiqueta-nombre{
+        color: blue;
+    }
+    #nombre{
+        color: blue;
+        font-weight: bold;
+    }
+    
+</style>
+
+<div class="alert alert-primary" role="alert">
+    Consulta los impactantes acontecimientos recientes en tu región 🌍⚠️🚨🔥
+</div>
+<form action="/mostrar" method="POST">
+    <div class="mb-3">
+        <label for="nombre" id="etiqueta-nombre">Nombre</label>
+        <br>
+        <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre...🖊️" autofocus minlength="0"
+            required>
+        <br>
+        <label for="region" class="form-label">Seleccione la region ⬇️</label>
+
+        <select name="region" id="region" class="form-select" aria-label="Default select example">
+            <option value="0" selected>Elija una opcion ✅</option>
+            <option value="Amazonas">Amazonas</option>
+            <option value="Arequipa">Arequipa</option>
+            <option value="Cusco">Cusco</option>
+            <option value="Lima">Lima</option>
+            <option value="Piura">Piura</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar información para la region <span id="region_elegida"></span>
+        🔍</button>
+</form>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        const regionSelect = document.getElementById('region');
+        if (regionSelect.value === '0') {
+            alert('Selecciona una region, por favor.');
+            event.preventDefault();  // Evita que el formulario se envíe
+        }
+    });
+
+    // Obtén el elemento select
+    const selectElement = document.getElementById('region');
+
+    // Añade el listener para el evento "change"
+    selectElement.addEventListener('change', function () {
+        // Obtén el valor seleccionado
+        const valorSeleccionado = selectElement.value;
+
+        // Muestra el valor seleccionado en el párrafo
+        document.getElementById('region_elegida').textContent = "➡️ "+valorSeleccionado.toUpperCase();
+    });
+
+</script>
+
+
+{% endblock %}

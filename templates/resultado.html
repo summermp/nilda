@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    #texto-bienvenida{
+        padding:5px;
+        margin-left:50px;
+        margin-right:50px;
+        border-radius: 8px;
+        background-color: green;
+        color:white;
+    }
+</style>
+
+<p id="texto-bienvenida" class="text-center">Hola, <strong>{{nombre}}</strong> 
+
+    Estas son las ultimas actualizaciones sobre los desastres naturales en {{region}}
+</p>
+
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename=mapa) }}" class="img-fluid rounded" alt="..."
+                style="object-fit: cover;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Región {{ region }}</strong></h5>
+                        <p> {{capital}}</p>
+                        <strong>Esta region tiene: {{ provincias | length }} provincias</strong>
+                        <p>{% for provincia in provincias %}
+                            <span>{{provincia}}</span>
+                            {% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <small class="text-muted">Desastres naturales ocurridos</small>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% if desastres %}
+    {% for desastre in desastres %}
+    <!-- Mostrar múltiples imágenes -->
+    {% for imagen in desastre.img %}
+    <div class="col">
+        <div class="card">
+            <h5 class="card-title fw-bold text-center">{{ desastre.tipo }}</h5>
+            <img src="{{ url_for('static', filename=imagen.ruta) }}" class="card-img-top"
+                alt="Imagen de {{ desastre.tipo }}">
+            <div class="card-body">
+                {% if imagen.descripcion %}
+                <p class="card-text"><small class="fw-light fst-italic">{{ imagen.descripcion }}</small></p>
+                {% endif %}
+                <p class="card-text">{{ desastre.descripcion }}</p>
+                <p class="card-text"><span class="badge text-bg-light">{{ desastre.ubicacion }}</span> <small
+                        class="text-body-secondary">{{ desastre.fecha }}</small></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+</div>
+{% endif %}
+
+{% endblock %}

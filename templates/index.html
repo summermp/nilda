@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Sistema de Información de Desastres Naturales en Perú</h1>
+<div class="my-3">
+    <h5 class="display-7 fw-bold">Bienvenido al Sistema de Información de Desastres Naturales
+    </h5>
+    <div class="col-lg-12">
+        <p>Este sistema te permite acceder a información actualizada sobre los desastres naturales ocurridos en los
+            últimos años en 5 departamentos del Perú que fueron declarados en emergencia.
+            <br>
+            En el Perú, la gestión de desastres naturales está a cargo del <b>Instituto Nacional de Defensa Civil
+                (INDECI)</b>,
+            que coordina acciones antes, durante y después de los eventos adversos para salvaguardar la seguridad de
+            las
+            personas. El INDECI trabaja en estrecha colaboración con el <b>Centro de Operaciones de Emergencia
+                Nacional
+                (COEN)</b>, el cual monitorea y evalúa las emergencias en tiempo real.
+            <br>
+            Adicionalmente, el <b>Sistema Nacional de Gestión del Riesgo de Desastres (SINAGERD)</b>, creado mediante la
+            <b>Ley N°
+                29664</b>, organiza las acciones del gobierno en cuatro áreas principales: prevención, reducción de
+            riesgos,
+            respuesta y recuperación. Dentro del SINAGERD, participan diversas entidades, tales como:
+        </p>
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='img/indeci.png') }}"
+                        class="img-fluid border rounded-3 shadow-lg mb-4" alt="Medio ambiente" width="700" height="500"
+                        loading="lazy">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Compendio Estadístico del INDECI 2023 <strong></h5>
+                        <p class="card-text mt-5 fw-light">El INDECI, publica anualmente información estadística oficial de
+                            emergencias y desastres ocurridas en el territorio a nivel nacional, así como las
+                            principales acciones realizadas por las autoridades del Sistema Nacional de Gestión
+                            del Riesgo de Desastres - SINAGERD en beneficio de la población damnificada y
+                            afectada por los eventos adversos de la naturaleza, dichos temas se presentan en el
+                            “COMPENDIO ESTADÍSTICO DEL INDECI 2023, GESTIÓN REACTIVA”. La información se
+                            presenta en once capítulos, el primer capítulo contiene información estadística en
+                            series de tiempo para el periodo 2003-2022 a nivel nacional, que comprende eventos
+                            por años, por meses, por tipo de evento, clasificación por grandes grupos, así como
+                            los eventos de mayor recurrencia en el país, en este capítulo también se presenta el
+                            resumen cronológico de los eventos más relevantes que han ocurrido en el territorio
+                            nacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='img/coen.png') }}"
+                        class="img-fluid border rounded-3 shadow-lg mb-4" alt="Medio ambiente" width="700" height="500"
+                        loading="lazy">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Sistema Nacional de Gestión del Riesgo de Desastres (SINAGERD)
+                        </h5>
+                        <p class="card-text mt-5 fw-light">El presente escenario identifica los probables impactos por sismo y tsunami
+                            para el ámbito determinado por el Ministerio de Salud (MINSA), el cual comprende 229
+                            distritos de los departamentos de Ica, Lima, la provincia del Callao y el departamento de
+                            Áncash. La finalidad de elaborar un escenario ante un evento extraordinario es reflexionar
+                            de los probables daños que podrían generarse si es que no se inician con la implementación
+                            de las medidas de reducción del riesgo y de coordinación para la probable emergencia entre
+                            los tomadores de decisión y los representantes de los sectores involucrados en el marco del
+                            Sistema Nacional de Gestión del Riesgo de desastres (SINAGERD).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename='img/sinagrid.png') }}"
+                        class="img-fluid border rounded-3 shadow-lg mb-4" alt="Medio ambiente" width="700" height="500"
+                        loading="lazy">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Sistema Nacional de Gestión del Riesgo de Desastres (SINAGERD)
+                        </h5>
+                        <p class="card-text mt-5 fw-light">El presente escenario identifica los probables impactos por sismo y tsunami
+                            para el ámbito determinado por el Ministerio de Salud (MINSA), el cual comprende 229
+                            distritos de los departamentos de Ica, Lima, la provincia del Callao y el departamento de
+                            Áncash. La finalidad de elaborar un escenario ante un evento extraordinario es reflexionar
+                            de los probables daños que podrían generarse si es que no se inician con la implementación
+                            de las medidas de reducción del riesgo y de coordinación para la probable emergencia entre
+                            los tomadores de decisión y los representantes de los sectores involucrados en el marco del
+                            Sistema Nacional de Gestión del Riesgo de desastres (SINAGERD).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ol class="list-group list-group-numbered mb-2">
+            <li class="list-group-item"><b>Gobiernos Regionales y Locales:</b> Implementan planes de gestión del riesgo
+                de desastres en sus respectivas jurisdicciones.
+            </li>
+            <li class="list-group-item"><b>Ministerio del Ambiente (MINAM):</b> Evalúa el impacto ambiental de los
+                desastres naturales.
+            </li>
+            <li class="list-group-item"><b>Ministerio de Vivienda, Construcción y Saneamiento:</b> Brinda asistencia
+                técnica para la rehabilitación y reconstrucción de infraestructura.</li>
+        </ol>
+    </div>
+</div>
+
+{% endblock %}

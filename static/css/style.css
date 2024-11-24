@@ -1,0 +1,19 @@
+ /* General */
+html, body {
+    height: 100%;  /* Ocupa toda la altura de la ventana */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+.contenido {
+    flex: 1;  /* Expande el contenido para ocupar el espacio disponible */
+}
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    color: #555;
+}
