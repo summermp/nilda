@@ -44,4 +44,4 @@ def show_region_page():
     return render_template('resultado.html',nombre=nombre, capital=capital, mapa=mapa, provincias=provincias, region=region.capitalize(), desastres=desastres)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(port=5000, debug=True)
